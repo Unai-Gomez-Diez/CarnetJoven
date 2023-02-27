@@ -34,9 +34,9 @@ public class NewPromocion {
 
         return promocion;
     }
-    private Empresa findEmpresa(Integer empresaId) {
+    private List<Empresa> findEmpresa(Integer empresaId) {
         GetEmpresaUseCase getEmpresaUseCase = new GetEmpresaUseCase(new EmpresaDataRepository(EmpresaFileLocalDataSource.getInstance()));
-        return getEmpresaUseCase.execute(empresaId);
+        return getEmpresaUseCase.execute();
     }
 
 }

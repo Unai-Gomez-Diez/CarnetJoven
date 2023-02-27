@@ -12,7 +12,7 @@ public class GetEmpresaUseCase {
         this.repository=repository;
     }
 
-    public List<Empresa> execute(){
-        return this.repository.getAll();
+    public Empresa execute(Integer id){
+        return this.repository.;
     }
 }
