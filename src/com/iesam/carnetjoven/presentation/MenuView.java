@@ -4,17 +4,17 @@ import com.iesam.carnetjoven.domain.models.Usuario;
 
 public class MenuView {
     public void init() {
-        //createUsuarioForm();
-       // showUsuarios();
+        createUsuarioForm();
+        showUsuarios();
 
-     //   createEmpresa();
-   //     showEmpresas();
+        createEmpresa();
+       showEmpresas();
 
- //       createPromocion();
-    //    showPromocion();
+        createPromocion();
+       showPromocion();
 
-  //      createCompra();
-//        showCompra();
+       createCompra();
+       showCompra();
 
     }
 

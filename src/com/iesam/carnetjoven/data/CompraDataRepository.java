@@ -11,6 +11,7 @@ public class CompraDataRepository implements CompraRepository {
     private CompraFileLocalDataSource localDataSource;
 
     public CompraDataRepository(CompraFileLocalDataSource instance) {
+        this.localDataSource=instance;
     }
 
     @Override

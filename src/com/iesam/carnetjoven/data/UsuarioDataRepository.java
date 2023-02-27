@@ -11,6 +11,7 @@ public class UsuarioDataRepository implements UsuarioRepository {
     private UsuarioFileLocalDataSource localDataSource;
 
     public UsuarioDataRepository(UsuarioFileLocalDataSource instance) {
+        this.localDataSource=instance;
     }
 
     @Override

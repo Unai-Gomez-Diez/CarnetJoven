@@ -2,17 +2,19 @@ package com.iesam.carnetjoven.presentation;
 
 import com.iesam.carnetjoven.data.UsuarioDataRepository;
 import com.iesam.carnetjoven.data.local.UsuarioFileLocalDataSource;
+import com.iesam.carnetjoven.domain.UsuarioRepository;
 import com.iesam.carnetjoven.domain.models.Usuario;
 import com.iesam.carnetjoven.domain.usecase.AddUsuarioUseCase;
 
 public class NewUsuario {
+    UsuarioRepository usuarioRepository = new UsuarioDataRepository(UsuarioFileLocalDataSource.getInstance());
     public void createUsuario() {
         Usuario usuario = buildUsuario();
         saveUsuario(usuario);
     }
 
     private void saveUsuario(Usuario usuario) {
-        AddUsuarioUseCase addUsuarioUseCase = new AddUsuarioUseCase(new UsuarioDataRepository(UsuarioFileLocalDataSource.getInstance()));
+        AddUsuarioUseCase addUsuarioUseCase = new AddUsuarioUseCase(usuarioRepository);
         addUsuarioUseCase.execute(usuario);
     }
 

@@ -11,6 +11,7 @@ public class EmpresaDataRepository implements EmpresaRepository {
     private EmpresaFileLocalDataSource localDataSource;
 
     public EmpresaDataRepository(EmpresaFileLocalDataSource instance) {
+        this.localDataSource=instance;
     }
 
     @Override

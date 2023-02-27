@@ -11,6 +11,7 @@ public class PromocionDataRepository implements PromocionRepository {
     private PromocionFileLocalDataSource localDataSource;
 
     public PromocionDataRepository(PromocionFileLocalDataSource instance) {
+        this.localDataSource=instance;
     }
 
     @Override

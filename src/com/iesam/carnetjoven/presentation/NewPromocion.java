@@ -4,12 +4,12 @@ import com.iesam.carnetjoven.data.EmpresaDataRepository;
 import com.iesam.carnetjoven.data.PromocionDataRepository;
 import com.iesam.carnetjoven.data.local.EmpresaFileLocalDataSource;
 import com.iesam.carnetjoven.data.local.PromocionFileLocalDataSource;
-import com.iesam.carnetjoven.domain.EmpresaRepository;
 import com.iesam.carnetjoven.domain.models.Empresa;
 import com.iesam.carnetjoven.domain.models.Promocion;
-import com.iesam.carnetjoven.domain.usecase.AddEmpresaUseCase;
 import com.iesam.carnetjoven.domain.usecase.AddPromocionUseCase;
 import com.iesam.carnetjoven.domain.usecase.GetEmpresaUseCase;
+
+import java.util.List;
 
 public class NewPromocion {
     public void createPromocion() {
@@ -36,7 +36,7 @@ public class NewPromocion {
     }
     private Empresa findEmpresa(Integer empresaId) {
         GetEmpresaUseCase getEmpresaUseCase = new GetEmpresaUseCase(new EmpresaDataRepository(EmpresaFileLocalDataSource.getInstance()));
-        return (Empresa) getEmpresaUseCase.execute();
+        return getEmpresaUseCase.execute(empresaId);
     }
 
 }
